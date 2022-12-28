@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance and prototype</title>
+    <style>
+        .qst {
+            color: blue;
+        }
+
+        .ans {
+            color: rgb(149, 4, 4);
+        }
+    </style>
+</head>
+<body>
+    <h1>Inheritance and prototype</h1>
+    
+    <b class="qst">Q1.</b>
+    <b class="ans">
+        Create 2 objects - parent and child. Attach methods to parent and use those methods in child object using 
+        parents prototype.
+    </b> <br><br>
+    <b class="qst">A1.</b>const parent = { <br>
+        clac(){ <br>
+            console.log(`${this.collegename} ${this.location}`) <br>
+        } <br>
+        clac() <br>
+    } <br>
+    const child1 = object.create(parent) <br>
+    child1.collegename = "Prepbytes" <br>
+    child1.location = "Gurgoan" <br>
+    child1.calc() <br>
+    const child2 = object.create(parent) <br>
+    child2.collegename = "Elevation Academy" <br>
+    child2.location = "Delhi" <br>
+    child2.calc() <br><br>
+    
+    <b class="qst">Q2.</b>
+    <b class="ans">
+        Write code to explain prototype chaining.
+    </b> <br><br>
+    <b class="qst">A2.</b>function Student(name,age){ <br>
+        this.name = name; <br>
+        this.age = age; <br>
+    } <br>
+    const student = new Student('John',32) <br>
+    console.log(student) <br><br>
+   
+    <b class="qst">Q3.</b>
+    <b class="ans">
+        Add a method to calculate sum of all elements in Array in array's prototype, use that method to calculate sum 
+        for multiple arrays.
+    </b> <br><br>
+    <b class="qst">A3.</b>
+    const AddSum = <br>
+    { <br>
+        name: "EA16", <br>
+        add : function(a) <br>
+        { <br>
+            let sum = 0; <br>
+            for(let i = 0 ; i < a.length ; i++) <br>
+            { <br>
+                sum += a[i]; <br>
+            }  <br>
+            console.log(sum);  <br>
+        } <br>
+    } <br>
+    AddSum.add([2,4,8,10,20]); <br> <br>
+    
+    <b class="qst">Q4.</b>
+    <b class="ans">
+        Write a JavaScript function to retrieve all the names of object's own and inherited properties.
+    </b> <br><br>
+    <b class="qst">A4.</b>
+    class Car { <br>
+        constructor(brand) { <br>
+          this.carname = brand; <br>
+        } <br>
+        present() { <br>
+          return 'I have a ' + this.carname; <br>
+        } <br>
+      } <br>      
+      class Model extends Car { <br>
+        constructor(brand, mod) { <br>
+          super(brand); <br>
+          this.model = mod; <br>
+        } <br>
+        show() { <br>
+          console.log( this.present() + ', it is a ' + this.model); <br>
+        }    <br>
+      } <br>
+
+</body>
+</html>
